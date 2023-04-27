@@ -7,7 +7,7 @@ This project consist in creating a router simulator. The machine sends movie ide
 ### Machine
 
 The machine is responsible for connecting to the router and sending data packets every 1 second. The information inside the packet is generated randomly
-```JSON
+```
 {
   origin // picked randomly between the 4 clients
   message // picked randomly between a list of movies
