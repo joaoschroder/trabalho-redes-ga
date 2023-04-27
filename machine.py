@@ -32,7 +32,7 @@ movie_ideas = [
     "Whiplash",
 ]
 
-print("Sending movie ideas...")
+print("Sending messages...")
 
 
 def start_machine():
@@ -44,7 +44,7 @@ def start_machine():
                 "destination": "",
                 "ttl": randrange(1, 6),
                 "tos": "Type Of Service",
-                "message": choice(movie_ideas),
+                "message": f"Hey! Here's a movie idea for you, I think you'll like it --> {choice(movie_ideas)}",
             }
             machine.send(bytes(json.dumps(data_packet), "utf-8"))
     except KeyboardInterrupt:
