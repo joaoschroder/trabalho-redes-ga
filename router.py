@@ -124,15 +124,8 @@ def print_summary():
     destination_not_found = packets_information["destination_not_found"]
     lower_ttl = packets_information["lower_ttl"]
     queue_full = packets_information["queue_full"]
-    packet_died = packets_information["packet_died"]
     successfully_sent = packets_information["successfully_sent"]
-    packets_lost = (
-        client_not_connected
-        + destination_not_found
-        + lower_ttl
-        + queue_full
-        + packet_died
-    )
+    packets_lost = client_not_connected + destination_not_found + lower_ttl + queue_full
     data_packets = successfully_sent + packets_lost
     routing_packets = packets_information["routing"]
     total_packets = data_packets + routing_packets
@@ -148,7 +141,6 @@ def print_summary():
         print(f"- Not found in routing table: {destination_not_found}")
         print(f"- Packet TTL lower than metric from routing table: {lower_ttl}")
         print(f"- Queue was full: {queue_full}")
-        print(f"- Packet TTL ended before reaching beginning of queue: {packet_died}")
         print(f"- Client was not connected: {client_not_connected}")
     print(
         "*******************************************************************************"
