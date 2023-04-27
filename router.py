@@ -58,7 +58,7 @@ def connect_client(client_socket):
 
 
 def handle_send():
-    print("Starting Send Thread! Queue Limit: 5")
+    print("Starting Send Thread! Queue Limit: 20")
     while True:
         if len(packet_queue) == 0:
             continue
@@ -110,13 +110,14 @@ def handle_client(client_socket, address):
             routing_table[origin] = {"destination": destination, "metricValue": metric}
             packets_information["routing"] += 1
         else:
-            if len(packet_queue) != 0 and len(packet_queue) == 5:
+            print("Receiving data packet.")
+            if len(packet_queue) != 0 and len(packet_queue) == 20:
                 print("The queue is full, discarding packet.")
                 packets_information["queue_full"] += 1
             else:
                 packet_queue.append(packet_formatted)
 
-        print("\n\n")
+        print("\n")
 
 
 def print_summary():
