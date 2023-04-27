@@ -35,7 +35,7 @@ def print_routing_table():
     print("****************************************")
     print("*   ORIGIN   *   DESTIN.  *   METRIC   *")
     for origin, send_info in routing_table.items():
-        print(f"* {origin} * {send_info['destination']} * {send_info['metricValue']} ")
+        print(f"* {origin} * {send_info['destination']} *    {send_info['metricValue']}   *")
     print("****************************************")
 
 
