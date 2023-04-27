@@ -72,3 +72,16 @@ The routing packet has important information that will be used by the router to 
 The metric used for this project is the amount of seconds that the router needs to hold the data packet after sending it to the destination.
 Also, the client can receive data packets from the router. In this case, they receive the data and print the origin and the message itself.
 
+## Running the project
+There are two ways to run the project.
+
+### Terminal
+
+You can run all the files individually by running the following code
+```
+python3 (machine/router/client1/client2/client3/client4).py
+```
+
+### AppleScript (obviously only for mac users)
+
+In the repositoty there is a file called `TrabalhoGA`, where you can open with the Script Editor App and add the path of the project from your machine, and just click the play button on the top-right corner of the app. It will open all the terminals necessary and run automatically the python files.
